@@ -18,7 +18,7 @@ class Weather extends Component {
   }
   render() {
     const weatherData = this.state.weatherData;
-   if (!weatherData) return <div>Loading</div>;
+   if (!weatherData) return <div>Loading..</div>;
    const weather = weatherData.weather[0];
    const iconUrl = "http://openweathermap.org/img/w/" + weather.icon + ".png";
    return (
@@ -28,8 +28,6 @@ class Weather extends Component {
          <img src={iconUrl} alt={weatherData.description} />
        </h1>
        <p>Current: {weatherData.main.temp}°C</p>
-       <p>High: {weatherData.main.temp_max}°C</p>
-       <p>Low: {weatherData.main.temp_min}°C</p>
        <p>Wind Speed: {weatherData.wind.speed} m/hr</p>
      </div>
    );
